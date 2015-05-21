@@ -1,0 +1,96 @@
+<ion-view view-title="我">
+  <ion-content class="setting">
+
+
+
+    <ion-list>
+      <ion-item class="item-divider item-gap">
+      </ion-item>
+
+      <ion-item class="login" on-hold="onHoldLogin()" ng-click="login()" ng-if="!loginName">
+
+        <img src="img/commentfailure.png" class="avatar">
+        <br>
+        <br>
+
+        <p ng-if="!processing">立即登录</p>
+        <ion-spinner icon="ripple" ng-if="processing"></ion-spinner>
+      </ion-item>
+
+      <ion-item class="item-avatar item-icon-right" ng-if="loginName" href="#/tab/my/personal">
+
+
+        <img ng-src="{{currentUser.avatar_url|avatarFilter}}" reset-img>
+        <h2>{{loginName}}</h2>
+        <p>积分：{{currentUser.score}}</p>
+        <!-- <i class="icon ion-ios-arrow-right"></i> -->
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+
+
+
+      <div class="button-bar bar-light">
+
+        <a class="button  icon-left" ng-click="collectList()"><i class="icon ion-android-star-outline"></i> 收藏</a>
+        <a class="button  icon-left" ng-click="messageList()"><i class="icon ion-email"></i> 消息
+          <span ng-if="messagesCount" class="badge badge-assertive messagesCount">
+            {{messagesCount > 9 ? 'N' : messagesCount}}
+          </span></a>
+        <!-- <a class="button">Third</a> -->
+      </div>
+
+      <ion-item class="item-divider item-gap">
+      </ion-item>
+
+      <!-- <ion-toggle ng-model="settings.showAvatar" ng-change="settingsChange()">
+        显示头像
+      </ion-toggle> -->
+      <ion-toggle ng-model="settings.sendFrom" ng-change="settingsChange()">
+        显示消息后缀
+      </ion-toggle>
+
+      <!--   <ion-item class="item-toggle">
+      仅在Wi-Fi下显示头像
+      <label class="toggle toggle-positive">
+        <input type="checkbox" ng-checked="settings.saverMode" ng-model="settings.saverMode">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </ion-item>
+      <div class="item">
+        <pre ng-bind="settings.saverMode | json"></pre>
+        {{settings}}
+      </div>-->
+      <ion-item class="item-divider">
+        关于
+      </ion-item>
+      <ion-item>
+        当前版本
+        <span class="item-note">
+          {{settings.version}}
+        </span>
+      </ion-item>
+      <ion-item ng-click="feedback()">
+        意见反馈
+        <span class="item-note">
+          Email:v@ionichina.com
+        </span>
+      </ion-item>
+      <ion-item onclick="window.open('itms-apps://itunes.apple.com/app/id996999423', '_system')" ng-if="platform.isIOS()">
+        评分鼓励
+      </ion-item>
+      <ion-item onclick="window.open('http://donghongfei.com', '_blank', 'location=yes')">
+        关于作者
+      </ion-item>
+      <ion-item onclick="window.open('http://ionichina.com/about', '_blank', 'location=yes')">
+        关于Ionichina社区
+      </ion-item>
+    </ion-list>
+    <div id="copyright">
+      &copy; {{now | date:'yyyy'}} 小学生·董宏飞
+
+    </div>
+  </ion-content>
+</ion-view>

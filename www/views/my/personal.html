@@ -1,0 +1,38 @@
+<ion-view view-title="个人信息">
+  <ion-content class="setting">
+
+
+
+    <ion-list>
+      <ion-item class="item-divider item-gap">
+      </ion-item>
+
+      <ion-item class="item-avatar item-icon-right">
+
+
+        <img ng-src="{{currentUser.avatar_url|avatarFilter}}" reset-img> {{currentUser.loginname}}
+
+      </ion-item>
+      <ion-item>
+        积分
+        <span class="item-note">
+          {{currentUser.score}}
+        </span>
+      </ion-item>
+      <ion-item>
+        注册日期
+        <span class="item-note">
+          {{currentUser.create_at | amDateFormat:'MMMM Do YYYY, h:mm:ss'}}
+        </span>
+      </ion-item>
+
+
+
+        <button class="button button-block button-light"  ng-click="logout()">
+          退出当前账号
+        </button>
+
+
+
+  </ion-content>
+</ion-view>

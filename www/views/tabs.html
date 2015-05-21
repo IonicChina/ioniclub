@@ -1,0 +1,35 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<!-- <ion-tabs delegate-handle="topic-category" class="tabs-striped tabs-top tabs-background-stable tabs-color-assertive" ng-class="$root.tabsHidden">
+  <ion-tab title="分享" on-select="onTabSelected()"></ion-tab>
+  <ion-tab title="问答" on-select="onTabSelected()"></ion-tab>
+  <ion-tab title="招聘" on-select="onTabSelected()"></ion-tab>
+  <ion-tab title="吐槽" on-select="onTabSelected()"></ion-tab>
+</ion-tabs> -->
+
+
+
+<ion-tabs class="tabs-icon-top tabs-stable tabs-color-positive {{hideTabs}} ">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="话题" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/tab/topics">
+    <ion-nav-view name="tab-topics"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="探索" icon-off="ion-ios-ionic-outline" icon-on="ion-ionic" href="#/tab/explore">
+    <ion-nav-view name="tab-explore"></ion-nav-view>
+  </ion-tab>
+
+
+
+  <!-- Account Tab -->
+  <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/my">
+    <ion-nav-view name="tab-my"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

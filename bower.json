@@ -1,0 +1,11 @@
+{
+  "name": "ioniclub",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0"
+  },
+  "dependencies": {
+    "angular-moment": "~0.10.0",
+    "angular-resource": "~1.3.15"
+  }
+}

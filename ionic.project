@@ -1,0 +1,12 @@
+{
+  "name": "ioniclub",
+  "app_id": "996999423",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

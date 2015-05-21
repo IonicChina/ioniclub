@@ -1,0 +1,86 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// base
+@import "base/_variables.scss";
+
+// modules
+@import "modules/_scaffolding.scss";
+@import "modules/_bar.scss";
+@import "modules/_items.scss";
+@import "modules/_markdown.scss";
+
+// app
+@import "app/_header.scss";
+@import "app/_topics.scss";
+@import "app/_topic.scss";
+@import "app/_user.scss";
+
+
+.tabs-striped.tabs-color-assertive .tab-item{
+  color: black;
+}
+.tabs-striped.tabs-color-assertive .tab-item.active{
+  color: red;
+}
+.nav-bar-tabs-top.hide + .view-container > .tabs-top > .tabs, .tabs.tabs-top {
+  top: 0 !important;
+}
+
+.nav-bar-tabs-top.hide + .view-container > .tabs-top > .tab-content .pane .has-tabs-top {
+  top: 49px !important;
+}
+
+.tabs-hide .tabs {
+    display: none;
+}
+
+.spinner svg {
+  width: 28px;
+  height: 28px;
+  stroke: #444;
+  fill: #444;
+}
+
+// 话题详情部分的spinner
+.topic-spinner {
+  margin: 100px auto 0;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 50px;
+  left: -webkit-calc(50% - 25px);
+  z-index: 2;
+  -webkit-transition:all .4s cubic-bezier(.6,-1.6,.92,.48);
+  transition:all .4s cubic-bezier(.6,-1.6,.92,.48);
+}
+.topic-spinner.ng-hide-add{
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
+}
+.topic-spinner.ng-hide-add-active{
+  -webkit-transform: scale(0,0);
+  transform: scale(0,0);
+}
+
+.hide-tabs .has-tabs { bottom: 0px; }

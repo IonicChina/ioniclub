@@ -1,0 +1,38 @@
+<!-- <ion-header-bar class="bar-positive">
+  <button class="button button-icon icon ion-navicon"></button>
+  <div class="h1 title">Header Buttons</div>
+  <button class="button button-clear">Edit</button>
+</ion-header-bar> -->
+
+<ion-view view-title="{{currentTab|tabName}}"  >
+  <ion-nav-buttons side="left">
+    <button class="button button-clear button-light" ng-click="openPopover($event)">类别</button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-compose" ng-click="showNewTopicModal()" ng-disabled="loginName == null"></button>
+  </ion-nav-buttons>
+
+
+  <ion-content class="has-tabs has-header"   >
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list class="topics">
+      <ion-item class="item-avatar" collection-repeat="topic in topics" href="#/tab/topics/{{topic.id}}"
+      collection-item-width="'100%'" collection-item-height="65px">
+        <img ng-src="{{topic.author.avatar_url|avatarFilter}}"   reset-img>
+        <h2>{{topic.title}}</h2>
+        <p class="summary">
+          <span ng-if="!topic.top && !topic.good" class="tab">{{topic.tab|tabName}}</span>
+          <span ng-if="topic.top" class="tab hl">置顶</span>
+          <span ng-if="topic.good && !topic.top" class="tab hl">精华</span>
+          {{topic.author.loginname}}
+          <span class="item-note ago" am-time-ago="topic.last_reply_at">
+          </span>
+        </p>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="moreDataCanBeLoaded()"></ion-infinite-scroll>
+
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!topics" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+  </ion-content>
+</ion-view>

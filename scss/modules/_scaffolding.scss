@@ -1,0 +1,43 @@
+#copyright {
+  margin: 20px 0 10px;
+  text-align: center;
+  color: #aaa;
+  text-shadow: 0 1px 0 #fff;
+}
+.notifyBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #EF4E3A;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+}
+.badge {
+  &.messagesCount {
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pane {
+  background-color: #f5f5f5;
+}
+
+.cnode {
+  color: $node-green;
+}
+
+.cnode-bg {
+  background-color: $node-green;
+}
