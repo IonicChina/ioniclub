@@ -1,6 +1,7 @@
 angular.module("ioniclub.config", [])
     .constant("ENV", {
         // "name": "production",
+        "accessToken": '',
         "debug": true,
         "api": "http://ionichina.com/api/v1",
         // "api": "http://localhost:3000/api/v1",
