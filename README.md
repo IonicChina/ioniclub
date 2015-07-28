@@ -18,7 +18,7 @@
 注： 真机调试，浏览器可以跳过此步骤；  
  ios 开发只能在 mac 下进行。
     
-    $ cd ioiclub
+    $ cd ioniclub
     $ ionic platform add ios
     $ ionic platform add android
 
