@@ -17,7 +17,8 @@
 ### 3. 添加 android 或 ios 平台
 注： 真机调试，浏览器可以跳过此步骤；  
  ios 开发只能在 mac 下进行。
-
+    
+    $ cd ioiclub
     $ ionic platform add ios
     $ ionic platform add android
 
